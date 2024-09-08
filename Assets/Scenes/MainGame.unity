@@ -3913,6 +3913,8 @@ GameObject:
   - component: {fileID: 1855954146470740342}
   - component: {fileID: 1855954146470740343}
   - component: {fileID: 1855954146470740344}
+  - component: {fileID: 1855954146470740346}
+  - component: {fileID: 1855954146470740345}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -4027,7 +4029,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5dc0d24202e834e9b0f4fc9fa24612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 3669380263152463942}
+  _enemyAnimator: {fileID: 2182861585485147620}
+  damage: 20
 --- !u!195 &1855954146470740344
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4039,7 +4043,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 6.5
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -4050,6 +4054,56 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &1855954146470740345
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336017515641117644}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &1855954146470740346
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336017515641117644}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Height: 3.794726
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.9251554, z: 0}
 --- !u!1 &1927420804565646627
 GameObject:
   m_ObjectHideFlags: 0
@@ -4488,6 +4542,7 @@ GameObject:
   - component: {fileID: 3673602143985611038}
   - component: {fileID: 3710346210655667498}
   - component: {fileID: 3680844775508519310}
+  - component: {fileID: 3710346210655667499}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4594,6 +4649,19 @@ MonoBehaviour:
   _runFrequency: 7.8
   _heightOffset: 0.05
   _lookSensitivity: 5
+--- !u!114 &3710346210655667499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3669380263152463942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8ea8e408d930549833cd21a305ed7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!81 &3731840997667215890
 AudioListener:
   m_ObjectHideFlags: 0
