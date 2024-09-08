@@ -8,6 +8,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject playerCam;
     public float range = 100f;
     public float damage = 25f;
+    public Animator playerAnimator;
     void Start()
     {
         
@@ -15,17 +16,24 @@ public class WeaponManager : MonoBehaviour
 
     void Update()
     {
+        if (playerAnimator.GetBool("isShooting"))
+        {
+            playerAnimator.SetBool("isShooting", false);
+        }
+
         if (Input.GetButtonDown("Fire1"))
         {
             Debug.Log("Shot Fired");
             FireWeapon();
+
         }
     }
 
     private void FireWeapon()
     {
-        RaycastHit hit;
+        playerAnimator.SetBool("isShooting", true);
 
+        RaycastHit hit;
         if (Physics.Raycast(playerCam.transform.position, transform.forward, out hit, range))
         {
             //Debug.Log("Hit a collider");
