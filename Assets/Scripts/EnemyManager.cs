@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -13,6 +14,6 @@ public class EnemyManager : MonoBehaviour
 
     void Update()
     {
-        
+        GetComponent<NavMeshAgent>().destination = player.transform.position;
     }
 }
