@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
     public float health = 100f;
+    public TMP_Text healthText;
 
+    public GameManager gameManager;
 
     void Start()
     {
@@ -22,11 +23,12 @@ public class PlayerManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         Debug.Log("Player has been hit");
-        health -= damage; 
+        health -= damage;
+        healthText.text = "Health: " + health.ToString();
 
         if (health <= 0f)
         {
-            SceneManager.LoadScene(0);
+            gameManager.EndGame();
         }
     }
 
