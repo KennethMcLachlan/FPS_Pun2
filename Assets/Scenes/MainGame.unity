@@ -5463,6 +5463,7 @@ GameObject:
   - component: {fileID: 3710346210655667498}
   - component: {fileID: 3680844775508519310}
   - component: {fileID: 3710346210655667499}
+  - component: {fileID: 3710346210655667500}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5554,7 +5555,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3669380263152463942}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 869cd17d97bb8984aa1ba012486f604a, type: 3}
   m_Name: 
@@ -5584,6 +5585,30 @@ MonoBehaviour:
   health: 100
   healthText: {fileID: 909267526}
   gameManager: {fileID: 129933558}
+--- !u!114 &3710346210655667500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3669380263152463942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1bc7ecae84cd44eac5c4b498ecf639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _walkSpeed: 3
+  _runSpeed: 7
+  _gravity: 1
+  _jumpHeight: 15
+  _crouching: 0
+  _smooth: 20
+  _walkFrequency: 4.8
+  _runFrequency: 7.8
+  _heightOffset: 0.05
+  _lookSensitivity: 5
+  cameraSensitivity: 10
+  characterCamera: {fileID: 3673602143985611038}
 --- !u!81 &3731840997667215890
 AudioListener:
   m_ObjectHideFlags: 0
